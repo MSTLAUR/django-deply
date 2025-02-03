@@ -22,6 +22,8 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy the Django project files
 COPY . /app/
 
+RUN python manage.py collectstatic --noinput
+
 # Expose the port the app runs on
 EXPOSE 8000
 

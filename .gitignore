@@ -8,3 +8,9 @@ ENV/
 env.bak/
 venv.bak/
 myenv/
+
+#staticfiles
+staticfiles/
+staticfiles
+staticfiles/*
+staticfiles
