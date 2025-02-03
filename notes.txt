@@ -44,3 +44,11 @@ railway run python manage.py makemigrations
 
 # Apply migrations
 railway run python manage.py migrate
+
+railway admin:
+Username (leave blank to use 'alienwarer1'): max
+Email address: mstlaur@gmail.com
+Password: loupxxx666
+Password (again):
+Superuser created successfully.
+PS C:\Users\ALIENWARE R1\Local Sites\deploy-django> 
