@@ -16,9 +16,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY . /app/
 
-RUN mkdir -p djangodeploy/static staticfiles && \
-    chmod -R 755 djangodeploy/static staticfiles && \
-    python manage.py collectstatic --noinput
+
 
 EXPOSE 8000
 
