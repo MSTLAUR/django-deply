@@ -83,17 +83,14 @@ WSGI_APPLICATION = 'djangodeploy.wsgi.application'
 
 
 
-db_url = config('DATABASE_URL')
-db_info = dj_database_url.parse(db_url)
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': db_info['NAME'],
-        'USER': db_info['USER'],
-        'PASSWORD': db_info['PASSWORD'],
-        'HOST': db_info['HOST'],
-        'PORT': db_info['PORT'],
+        'ENGINE': 'django.db.backends.postgresql',  # or 'django.db.backends.sqlite3', 'django.db.backends.mysql', etc.
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'cFazUpOPhgxGKmFYkmBBCoXCPYukBWzH',
+        'HOST': 'postgres.railway.internal',  
+        'PORT': '5432',  
     }
 }
 
