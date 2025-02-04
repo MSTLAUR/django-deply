@@ -81,10 +81,8 @@ WSGI_APPLICATION = 'djangodeploy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASE_URL = config('DATABASE_URL', default='sqlite:///db.sqlite3')
-DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
-}
+DATABASE_URL = config('DATABASE_URL')
+db_from_env = dj_database_url.config(default=DATABASE_URL, conn_max_age=500)
 
 
 # Password validation
