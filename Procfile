@@ -1,1 +1,1 @@
-web: gunicorn djangodeploy.wsgi:application --log-file -
+web: python manage.py migrate && gunicorn djangodeploy.wsgi

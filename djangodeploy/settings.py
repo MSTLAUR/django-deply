@@ -14,11 +14,15 @@ from pathlib import Path
 from decouple import config
 import os
 import dj_database_url
+from dotenv import load_dotenv
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -83,15 +87,11 @@ WSGI_APPLICATION = 'djangodeploy.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # or 'django.db.backends.sqlite3', 'django.db.backends.mysql', etc.
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'cFazUpOPhgxGKmFYkmBBCoXCPYukBWzH',
-        'HOST': 'postgres.railway.internal',  
-        'PORT': '5432',  
-    }
+
+
+DATABASE_URL=os.getenv("DATABASE_URL")
+DATABASES={
+    "default":dj_database_url.config(default=DATABASE_URL,conn_max_age=1800),
 }
 
 # Password validation
