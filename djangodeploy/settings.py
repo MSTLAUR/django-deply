@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'djangodeploy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  # or 'django.db.backends.sqlite3', 'django.db.backends.mysql', etc.
-        'NAME': 'postgres',
+        'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': 'cFazUpOPhgxGKmFYkmBBCoXCPYukBWzH',
         'HOST': 'postgres.railway.internal',  
