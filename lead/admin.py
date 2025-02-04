@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import Lead
 
 
@@ -11,7 +12,3 @@ admin.site.index_title = "welcome back 🕶"
 
 
 admin.site.register(Lead)
-
-
-
-
