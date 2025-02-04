@@ -83,13 +83,17 @@ WSGI_APPLICATION = 'djangodeploy.wsgi.application'
 
 
 
+db_url = config('DATABASE_URL')
+db_info = dj_database_url.parse(db_url)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        **dj_database_url.config(
-            default=config('DATABASE_URL', default=''),
-            conn_max_age=600
-        )
+        'NAME': db_info['NAME'],
+        'USER': db_info['USER'],
+        'PASSWORD': db_info['PASSWORD'],
+        'HOST': db_info['HOST'],
+        'PORT': db_info['PORT'],
     }
 }
 
